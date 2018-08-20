@@ -11,7 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+//Highscore
+Route::get('/', 'HighscoreController@index')->name('highscore.index');
+
+//Drink
+Route::get('/drinks', 'DrinkController@index')->name('drink.index');
+
+//User
+Route::get('/users', 'UserController@index')->name('user.index');
 

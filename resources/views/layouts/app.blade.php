@@ -19,13 +19,10 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Bestenliste</a>
+                        <a class="nav-link" href="{{ route('highscore.index') }}">Bestenliste</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Spieler hinzufügen</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Getränk hinzufügen</a>
+                        <a class="nav-link" href="{{ route('user.index') }}">Spieler verwalten</a>
                     </li>
                 </ul>
             </div>
