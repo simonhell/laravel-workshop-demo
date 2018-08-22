@@ -14,9 +14,7 @@
 
 //Highscore
 Route::get('/', 'HighscoreController@index')->name('highscores.index');
-
-//Drink
-Route::get('/drinks', 'DrinkController@index')->name('drinks.index');
+Route::post('/', 'HighscoreController@saveDrink')->name('highscores.saveDrink');
 
 //User
 Route::get('/users', 'UserController@index')->name('users.index');

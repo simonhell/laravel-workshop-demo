@@ -27,12 +27,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Beer</td>
-                        <td>500</td>
-                        <td>5</td>
-                    </tr>
+                    @foreach ($user->drinks as $drink)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $drink->name }}</td>
+                            <td>{{ $drink->amount }}</td>
+                            <td>{{ $drink->alcohol }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

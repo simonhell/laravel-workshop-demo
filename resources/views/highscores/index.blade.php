@@ -47,36 +47,40 @@
     </table>
     <hr>
     <h1>Add drink</h1>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label><b>Select User</b></label>
-                <select class="form-control">
-                    <option>
-                        Select User...
-                    </option>
-                    @foreach ($users as $user)
-                    <option name="user_id" value="{{ $user->id }}">
-                        {{ $user->first_name ." " .$user->last_name }}
-                    </option>
-                    @endforeach
-                </select>
+    <form action="{{ route('highscores.saveDrink') }}" method="POST">
+        <input type="hidden" name="_method" value="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label><b>Select User</b></label>
+                    <select class="form-control" name="user_id">
+                        <option>
+                            Select User...
+                        </option>
+                        @foreach ($users as $user)
+                        <option value="{{ $user->id }}">
+                            {{ $user->first_name ." " .$user->last_name }}
+                        </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><b>Drink name</b></label>
+                    <input type="text" name="name" class="form-control" placeholder="Drink Name">
+                </div>
             </div>
-            <div class="form-group">
-                <label><b>Drink name</b></label>
-                <input type="text" class="form-control" placeholder="Drink Name">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label><b>Amount (ml)</b></label>
+                    <input type="number" name="amount" class="form-control" placeholder="Amount">
+                </div>
+                <div class="form-group">
+                    <label><b>Alocohol content (%)</b></label>
+                    <input type="number" name="alcohol" class="form-control" placeholder="Alcohol content">
+                </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label><b>Amount (ml)</b></label>
-                <input type="number" class="form-control" placeholder="Amount">
-            </div>
-            <div class="form-group">
-                <label><b>Alocohol content (%)</b></label>
-                <input type="number" class="form-control" placeholder="Alcohol content">
-            </div>
-        </div>
-    </div>
-    <button type="button" class="btn btn-primary btn-lg">Add drink</button>
+        <button type="submit" class="btn btn-primary btn-lg">Add drink</button>
+    </form>
 @endsection
