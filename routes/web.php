@@ -13,11 +13,13 @@
 
 
 //Highscore
-Route::get('/', 'HighscoreController@index')->name('highscore.index');
+Route::get('/', 'HighscoreController@index')->name('highscores.index');
 
 //Drink
-Route::get('/drinks', 'DrinkController@index')->name('drink.index');
+Route::get('/drinks', 'DrinkController@index')->name('drinks.index');
 
 //User
-Route::get('/users', 'UserController@index')->name('user.index');
+Route::get('/users', 'UserController@index')->name('users.index');
+Route::get('/users/{id}/edit', 'UserController@edit')->name('users.edit');
+
 

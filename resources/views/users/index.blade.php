@@ -1,6 +1,4 @@
 @extends('layouts.app')
-
-
 @section('body')
     <hr>
     <h1>Users</h1>
@@ -23,9 +21,7 @@
                         <th>Last Name</th>
                         <th>Age</th>
                         <th>Drinks</th>
-                        <th>total amount (ml)</th>
-                        <th>total amount alcohol (ml)</th>
-                        <th></th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,11 +31,9 @@
                         <td>Zuckerberg</td>
                         <td>34</td>
                         <td>1</td>
-                        <td>400</td>
-                        <td>100</td>
                         <td>
-                            <button class="btn btn-sm btn-warning">Edit</button>
-                            <button class="btn btn-sm btn-danger">Delete</button>
+                            <button class="btn btn-sm btn-warning text-white"><i class="material-icons">edit</i></button>
+                            <button class="btn btn-sm btn-danger"><i class="material-icons">delete</i></button>
                         </td>
                     </tr>
                     <tr>
@@ -48,11 +42,9 @@
                         <td>Auer</td>
                         <td>41</td>
                         <td>1</td>
-                        <td>400</td>
-                        <td>100</td>
                         <td>
-                            <button class="btn btn-sm btn-warning">Edit</button>
-                            <button class="btn btn-sm btn-danger">Delete</button>
+                            <button class="btn btn-sm btn-warning text-white"><i class="material-icons">edit</i></button>
+                            <button class="btn btn-sm btn-danger"><i class="material-icons">delete</i></button>
                         </td>
                     </tr>
                     <tr>
@@ -61,11 +53,9 @@
                         <td>Joch</td>
                         <td>18</td>
                         <td>1</td>
-                        <td>400</td>
-                        <td>100</td>
                         <td>
-                            <button class="btn btn-sm btn-warning">Edit</button>
-                            <button class="btn btn-sm btn-danger">Delete</button>
+                            <button class="btn btn-sm btn-warning text-white"><i class="material-icons">edit</i></button>
+                            <button class="btn btn-sm btn-danger"><i class="material-icons">delete</i></button>
                         </td>
                     </tr>
                 </tbody>

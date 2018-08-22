@@ -8,6 +8,8 @@
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-primary">
@@ -19,10 +21,10 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('highscore.index') }}">Bestenliste</a>
+                        <a class="nav-link" href="{{ route('highscores.index') }}">Highscores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.index') }}">Spieler verwalten</a>
+                        <a class="nav-link" href="{{ route('users.index') }}">Manage users</a>
                     </li>
                 </ul>
             </div>

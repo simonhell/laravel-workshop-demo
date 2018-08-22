@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class HighscoreController extends Controller
 {
     public function index() {
-        return view('highscore');
+        return view('highscores.index');
     }
 }
