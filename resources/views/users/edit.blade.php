@@ -6,10 +6,14 @@
     <div class="row">
         <div class="col-md-3">
             <h3>Edit User</h3>
-            <input type="text" name="first_name" class="form-control mb-3" placeholder="First Name">
-            <input type="text" name="last_name" class="form-control mb-3" placeholder="Last Name">
-            <input type="text" name="age" class="form-control mb-3" placeholder="Age">
-            <button type="button" class="btn btn-primary mb-3">Save</button>
+            <form action="{{ route('users.update', ['id' => $user->id]) }}" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="text" name="first_name" class="form-control mb-3" placeholder="First Name" value="{{ $user->first_name }}">
+                <input type="text" name="last_name" class="form-control mb-3" placeholder="Last Name" value="{{ $user->last_name }}">
+                <input type="text" name="age" class="form-control mb-3" placeholder="Age" value="{{ $user->age }}">
+                <button type="submit" class="btn btn-primary mb-3">Save</button>
+            </form>
         </div>
         <div class="col-md-9">
             <h3>Drinks</h3>

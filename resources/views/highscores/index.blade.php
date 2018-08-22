@@ -55,15 +55,11 @@
                     <option>
                         Select User...
                     </option>
-                    <option>
-                        Alexander Betz
+                    @foreach ($users as $user)
+                    <option name="user_id" value="{{ $user->id }}">
+                        {{ $user->first_name ." " .$user->last_name }}
                     </option>
-                    <option>
-                        Mario Doppler
-                    </option>
-                    <option>
-                        Simon Hell
-                    </option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">

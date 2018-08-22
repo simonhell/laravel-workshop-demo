@@ -6,10 +6,14 @@
     <div class="row">
         <div class="col-md-3">
             <h3>Add User</h3>
-            <input type="text" name="first_name" class="form-control mb-3" placeholder="First Name">
-            <input type="text" name="last_name" class="form-control mb-3" placeholder="Last Name">
-            <input type="text" name="age" class="form-control mb-3" placeholder="Age">
-            <button type="button" class="btn btn-primary mb-3">Add</button>
+            <form action="{{ route('users.store') }}" method="POST">
+                <input type="hidden" name="_method" value="POST">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="text" name="first_name" class="form-control mb-3" placeholder="First Name">
+                <input type="text" name="last_name" class="form-control mb-3" placeholder="Last Name">
+                <input type="text" name="age" class="form-control mb-3" placeholder="Age">
+                <button type="submit" class="btn btn-primary mb-3">Add</button>
+            </form>
         </div>
         <div class="col-md-9">
             <h3>Manage Users</h3>
@@ -25,39 +29,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Zuckerberg</td>
-                        <td>34</td>
-                        <td>1</td>
-                        <td>
-                            <button class="btn btn-sm btn-warning text-white"><i class="material-icons">edit</i></button>
-                            <button class="btn btn-sm btn-danger"><i class="material-icons">delete</i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Auer</td>
-                        <td>41</td>
-                        <td>1</td>
-                        <td>
-                            <button class="btn btn-sm btn-warning text-white"><i class="material-icons">edit</i></button>
-                            <button class="btn btn-sm btn-danger"><i class="material-icons">delete</i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Larry</td>
-                        <td>Joch</td>
-                        <td>18</td>
-                        <td>1</td>
-                        <td>
-                            <button class="btn btn-sm btn-warning text-white"><i class="material-icons">edit</i></button>
-                            <button class="btn btn-sm btn-danger"><i class="material-icons">delete</i></button>
-                        </td>
-                    </tr>
+                    @foreach($users as $user)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $user->first_name }}</td>
+                            <td>{{ $user->last_name }}</td>
+                            <td>{{ $user->age }}</td>
+                            <td>0</td>
+                            <td>
+                                <form action="{{ route('users.edit', ['id' => $user->id]) }}" method="GET">
+                                    <button type="submit" class="btn btn-sm btn-warning text-white mb-1"><i class="material-icons">edit</i></button>
+                                </form>
+                                <form action="{{ route('users.destroy', ['id' => $user->id]) }}" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <button type="submit" class="btn btn-sm btn-danger"><i class="material-icons">delete</i></button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
