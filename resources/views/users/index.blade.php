@@ -38,7 +38,7 @@
                             <td>0</td>
                             <td>
                                 <form action="{{ route('users.edit', ['id' => $user->id]) }}" method="GET">
-                                    <button type="submit" class="btn btn-sm btn-warning text-white mb-1"><i class="material-icons">edit</i></button>
+                                    <button type="submit" class="btn btn-sm btn-warning text-white"><i class="material-icons">edit</i></button>
                                 </form>
                                 <form action="{{ route('users.destroy', ['id' => $user->id]) }}" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
